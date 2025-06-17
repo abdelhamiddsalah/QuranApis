@@ -19,6 +19,7 @@ public class SurahService {
         return surahrepo.findAll()
                 .stream()
                 .map(surahMapper::toDto)
+                .distinct()
                 .collect(Collectors.toList());
     }
 

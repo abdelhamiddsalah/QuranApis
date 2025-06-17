@@ -23,22 +23,23 @@ public class SurashLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // تحميل الملف JSON من resources/data/full_surahs.json
+        if (surahrepo.count() > 0) {
+            System.out.println("السور موجودة بالفعل في قاعدة البيانات، لن يتم التحميل مرة أخرى.");
+            return;
+        }
+
         ObjectMapper mapper = new ObjectMapper();
         InputStream inputStream = new ClassPathResource("data/full_surahs.json").getInputStream();
 
-        // قراءة البيانات وتحويلها إلى List<SurahDto>
         List<SurahDto> dtos = mapper.readValue(inputStream, new TypeReference<List<SurahDto>>() {});
 
-        // تحويلها إلى List<SurahEntity>
         List<SurahEntity> entities = dtos.stream()
                 .map(surahMapper::toEntity)
                 .collect(Collectors.toList());
 
-        // حفظ البيانات في قاعدة البيانات
         surahrepo.saveAll(entities);
-
 
         System.out.println("تم تحميل السور بنجاح إلى قاعدة البيانات.");
     }
+
 }
