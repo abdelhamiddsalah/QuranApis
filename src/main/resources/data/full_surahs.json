@@ -1,0 +1,800 @@
+[
+    {
+        "id": 1,
+        "nameArabic": "الفاتحة",
+        "ayahCount": 7,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 1
+    },
+    {
+        "id": 2,
+        "nameArabic": "البقرة",
+        "ayahCount": 286,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 2
+    },
+    {
+        "id": 3,
+        "nameArabic": "آل عمران",
+        "ayahCount": 200,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 3
+    },
+    {
+        "id": 4,
+        "nameArabic": "النساء",
+        "ayahCount": 176,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 4
+    },
+    {
+        "id": 5,
+        "nameArabic": "المائدة",
+        "ayahCount": 120,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 5
+    },
+    {
+        "id": 6,
+        "nameArabic": "الأنعام",
+        "ayahCount": 165,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 6
+    },
+    {
+        "id": 7,
+        "nameArabic": "الأعراف",
+        "ayahCount": 206,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 7
+    },
+    {
+        "id": 8,
+        "nameArabic": "الأنفال",
+        "ayahCount": 75,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 8
+    },
+    {
+        "id": 9,
+        "nameArabic": "التوبة",
+        "ayahCount": 129,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 9
+    },
+    {
+        "id": 10,
+        "nameArabic": "يونس",
+        "ayahCount": 109,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 10
+    },
+    {
+        "id": 11,
+        "nameArabic": "هود",
+        "ayahCount": 123,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 11
+    },
+    {
+        "id": 12,
+        "nameArabic": "يوسف",
+        "ayahCount": 111,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 12
+    },
+    {
+        "id": 13,
+        "nameArabic": "الرعد",
+        "ayahCount": 43,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 13
+    },
+    {
+        "id": 14,
+        "nameArabic": "إبراهيم",
+        "ayahCount": 52,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 14
+    },
+    {
+        "id": 15,
+        "nameArabic": "الحجر",
+        "ayahCount": 99,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 15
+    },
+    {
+        "id": 16,
+        "nameArabic": "النحل",
+        "ayahCount": 128,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 16
+    },
+    {
+        "id": 17,
+        "nameArabic": "الإسراء",
+        "ayahCount": 111,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 17
+    },
+    {
+        "id": 18,
+        "nameArabic": "الكهف",
+        "ayahCount": 110,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 18
+    },
+    {
+        "id": 19,
+        "nameArabic": "مريم",
+        "ayahCount": 98,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 19
+    },
+    {
+        "id": 20,
+        "nameArabic": "طه",
+        "ayahCount": 135,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 20
+    },
+    {
+        "id": 21,
+        "nameArabic": "الأنبياء",
+        "ayahCount": 112,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 21
+    },
+    {
+        "id": 22,
+        "nameArabic": "الحج",
+        "ayahCount": 78,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 22
+    },
+    {
+        "id": 23,
+        "nameArabic": "المؤمنون",
+        "ayahCount": 118,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 23
+    },
+    {
+        "id": 24,
+        "nameArabic": "النور",
+        "ayahCount": 64,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 24
+    },
+    {
+        "id": 25,
+        "nameArabic": "الفرقان",
+        "ayahCount": 77,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 25
+    },
+    {
+        "id": 26,
+        "nameArabic": "الشعراء",
+        "ayahCount": 227,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 26
+    },
+    {
+        "id": 27,
+        "nameArabic": "النمل",
+        "ayahCount": 93,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 27
+    },
+    {
+        "id": 28,
+        "nameArabic": "القصص",
+        "ayahCount": 88,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 28
+    },
+    {
+        "id": 29,
+        "nameArabic": "العنكبوت",
+        "ayahCount": 69,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 29
+    },
+    {
+        "id": 30,
+        "nameArabic": "الروم",
+        "ayahCount": 60,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 30
+    },
+    {
+        "id": 31,
+        "nameArabic": "لقمان",
+        "ayahCount": 34,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 31
+    },
+    {
+        "id": 32,
+        "nameArabic": "السجدة",
+        "ayahCount": 30,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 32
+    },
+    {
+        "id": 33,
+        "nameArabic": "الأحزاب",
+        "ayahCount": 73,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 33
+    },
+    {
+        "id": 34,
+        "nameArabic": "سبإ",
+        "ayahCount": 54,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 34
+    },
+    {
+        "id": 35,
+        "nameArabic": "فاطر",
+        "ayahCount": 45,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 35
+    },
+    {
+        "id": 36,
+        "nameArabic": "يس",
+        "ayahCount": 83,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 36
+    },
+    {
+        "id": 37,
+        "nameArabic": "الصافات",
+        "ayahCount": 182,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 37
+    },
+    {
+        "id": 38,
+        "nameArabic": "ص",
+        "ayahCount": 88,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 38
+    },
+    {
+        "id": 39,
+        "nameArabic": "الزمر",
+        "ayahCount": 75,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 39
+    },
+    {
+        "id": 40,
+        "nameArabic": "غافر",
+        "ayahCount": 85,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 40
+    },
+    {
+        "id": 41,
+        "nameArabic": "فصلت",
+        "ayahCount": 54,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 41
+    },
+    {
+        "id": 42,
+        "nameArabic": "الشورى",
+        "ayahCount": 53,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 42
+    },
+    {
+        "id": 43,
+        "nameArabic": "الزخرف",
+        "ayahCount": 89,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 43
+    },
+    {
+        "id": 44,
+        "nameArabic": "الدخان",
+        "ayahCount": 59,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 44
+    },
+    {
+        "id": 45,
+        "nameArabic": "الجاثية",
+        "ayahCount": 37,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 45
+    },
+    {
+        "id": 46,
+        "nameArabic": "الأحقاف",
+        "ayahCount": 35,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 46
+    },
+    {
+        "id": 47,
+        "nameArabic": "محمد",
+        "ayahCount": 38,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 47
+    },
+    {
+        "id": 48,
+        "nameArabic": "الفتح",
+        "ayahCount": 29,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 48
+    },
+    {
+        "id": 49,
+        "nameArabic": "الحجرات",
+        "ayahCount": 18,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 49
+    },
+    {
+        "id": 50,
+        "nameArabic": "ق",
+        "ayahCount": 45,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 50
+    },
+    {
+        "id": 51,
+        "nameArabic": "الذاريات",
+        "ayahCount": 60,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 51
+    },
+    {
+        "id": 52,
+        "nameArabic": "الطور",
+        "ayahCount": 49,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 52
+    },
+    {
+        "id": 53,
+        "nameArabic": "النجم",
+        "ayahCount": 62,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 53
+    },
+    {
+        "id": 54,
+        "nameArabic": "القمر",
+        "ayahCount": 55,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 54
+    },
+    {
+        "id": 55,
+        "nameArabic": "الرحمن",
+        "ayahCount": 78,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 55
+    },
+    {
+        "id": 56,
+        "nameArabic": "الواقعة",
+        "ayahCount": 96,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 56
+    },
+    {
+        "id": 57,
+        "nameArabic": "الحديد",
+        "ayahCount": 29,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 57
+    },
+    {
+        "id": 58,
+        "nameArabic": "المجادلة",
+        "ayahCount": 22,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 58
+    },
+    {
+        "id": 59,
+        "nameArabic": "الحشر",
+        "ayahCount": 24,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 59
+    },
+    {
+        "id": 60,
+        "nameArabic": "الممتحنة",
+        "ayahCount": 13,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 60
+    },
+    {
+        "id": 61,
+        "nameArabic": "الصف",
+        "ayahCount": 14,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 61
+    },
+    {
+        "id": 62,
+        "nameArabic": "الجمعة",
+        "ayahCount": 11,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 62
+    },
+    {
+        "id": 63,
+        "nameArabic": "المنافقون",
+        "ayahCount": 11,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 63
+    },
+    {
+        "id": 64,
+        "nameArabic": "التغابن",
+        "ayahCount": 18,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 64
+    },
+    {
+        "id": 65,
+        "nameArabic": "الطلاق",
+        "ayahCount": 12,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 65
+    },
+    {
+        "id": 66,
+        "nameArabic": "التحريم",
+        "ayahCount": 12,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 66
+    },
+    {
+        "id": 67,
+        "nameArabic": "الملك",
+        "ayahCount": 30,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 67
+    },
+    {
+        "id": 68,
+        "nameArabic": "القلم",
+        "ayahCount": 52,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 68
+    },
+    {
+        "id": 69,
+        "nameArabic": "الحاقة",
+        "ayahCount": 52,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 69
+    },
+    {
+        "id": 70,
+        "nameArabic": "المعارج",
+        "ayahCount": 44,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 70
+    },
+    {
+        "id": 71,
+        "nameArabic": "نوح",
+        "ayahCount": 28,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 71
+    },
+    {
+        "id": 72,
+        "nameArabic": "الجن",
+        "ayahCount": 28,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 72
+    },
+    {
+        "id": 73,
+        "nameArabic": "المزمل",
+        "ayahCount": 20,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 73
+    },
+    {
+        "id": 74,
+        "nameArabic": "المدثر",
+        "ayahCount": 56,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 74
+    },
+    {
+        "id": 75,
+        "nameArabic": "القيامة",
+        "ayahCount": 40,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 75
+    },
+    {
+        "id": 76,
+        "nameArabic": "الإنسان",
+        "ayahCount": 31,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 76
+    },
+    {
+        "id": 77,
+        "nameArabic": "المرسلات",
+        "ayahCount": 50,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 77
+    },
+    {
+        "id": 78,
+        "nameArabic": "النبأ",
+        "ayahCount": 40,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 78
+    },
+    {
+        "id": 79,
+        "nameArabic": "النازعات",
+        "ayahCount": 46,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 79
+    },
+    {
+        "id": 80,
+        "nameArabic": "عبس",
+        "ayahCount": 42,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 80
+    },
+    {
+        "id": 81,
+        "nameArabic": "التكوير",
+        "ayahCount": 29,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 81
+    },
+    {
+        "id": 82,
+        "nameArabic": "الإنفطار",
+        "ayahCount": 19,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 82
+    },
+    {
+        "id": 83,
+        "nameArabic": "المطففين",
+        "ayahCount": 36,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 83
+    },
+    {
+        "id": 84,
+        "nameArabic": "الإنشقاق",
+        "ayahCount": 25,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 84
+    },
+    {
+        "id": 85,
+        "nameArabic": "البروج",
+        "ayahCount": 22,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 85
+    },
+    {
+        "id": 86,
+        "nameArabic": "الطارق",
+        "ayahCount": 17,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 86
+    },
+    {
+        "id": 87,
+        "nameArabic": "الأعلى",
+        "ayahCount": 19,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 87
+    },
+    {
+        "id": 88,
+        "nameArabic": "الغاشية",
+        "ayahCount": 26,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 88
+    },
+    {
+        "id": 89,
+        "nameArabic": "الفجر",
+        "ayahCount": 30,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 89
+    },
+    {
+        "id": 90,
+        "nameArabic": "البلد",
+        "ayahCount": 20,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 90
+    },
+    {
+        "id": 91,
+        "nameArabic": "الشمس",
+        "ayahCount": 15,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 91
+    },
+    {
+        "id": 92,
+        "nameArabic": "الليل",
+        "ayahCount": 21,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 92
+    },
+    {
+        "id": 93,
+        "nameArabic": "الضحى",
+        "ayahCount": 11,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 93
+    },
+    {
+        "id": 94,
+        "nameArabic": "الشرح",
+        "ayahCount": 8,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 94
+    },
+    {
+        "id": 95,
+        "nameArabic": "التين",
+        "ayahCount": 8,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 95
+    },
+    {
+        "id": 96,
+        "nameArabic": "العلق",
+        "ayahCount": 19,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 96
+    },
+    {
+        "id": 97,
+        "nameArabic": "القدر",
+        "ayahCount": 5,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 97
+    },
+    {
+        "id": 98,
+        "nameArabic": "البينة",
+        "ayahCount": 8,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 98
+    },
+    {
+        "id": 99,
+        "nameArabic": "الزلزلة",
+        "ayahCount": 8,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 99
+    },
+    {
+        "id": 100,
+        "nameArabic": "العاديات",
+        "ayahCount": 11,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 100
+    },
+    {
+        "id": 101,
+        "nameArabic": "القارعة",
+        "ayahCount": 11,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 101
+    },
+    {
+        "id": 102,
+        "nameArabic": "التكاثر",
+        "ayahCount": 8,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 102
+    },
+    {
+        "id": 103,
+        "nameArabic": "العصر",
+        "ayahCount": 3,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 103
+    },
+    {
+        "id": 104,
+        "nameArabic": "الهمزة",
+        "ayahCount": 9,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 104
+    },
+    {
+        "id": 105,
+        "nameArabic": "الفيل",
+        "ayahCount": 5,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 105
+    },
+    {
+        "id": 106,
+        "nameArabic": "قريش",
+        "ayahCount": 4,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 106
+    },
+    {
+        "id": 107,
+        "nameArabic": "الماعون",
+        "ayahCount": 7,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 107
+    },
+    {
+        "id": 108,
+        "nameArabic": "الكوثر",
+        "ayahCount": 3,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 108
+    },
+    {
+        "id": 109,
+        "nameArabic": "الكافرون",
+        "ayahCount": 6,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 109
+    },
+    {
+        "id": 110,
+        "nameArabic": "النصر",
+        "ayahCount": 3,
+        "revelationPlace": "المدينة",
+        "orderInMushaf": 110
+    },
+    {
+        "id": 111,
+        "nameArabic": "المسد",
+        "ayahCount": 5,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 111
+    },
+    {
+        "id": 112,
+        "nameArabic": "الإخلاص",
+        "ayahCount": 4,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 112
+    },
+    {
+        "id": 113,
+        "nameArabic": "الفلق",
+        "ayahCount": 5,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 113
+    },
+    {
+        "id": 114,
+        "nameArabic": "الناس",
+        "ayahCount": 6,
+        "revelationPlace": "مكة",
+        "orderInMushaf": 114
+    }
+]
