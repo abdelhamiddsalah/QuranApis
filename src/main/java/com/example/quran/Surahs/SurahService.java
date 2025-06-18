@@ -1,7 +1,9 @@
 package com.example.quran.Surahs;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -16,18 +18,23 @@ public class SurahService {
     private SurahMapper surahMapper;
 
     public List<SurahDto> getAllSurahs() {
-        return surahrepo.findAll()
+        List<SurahDto> surahs= surahrepo.findAll()
                 .stream()
                 .map(surahMapper::toDto)
                 .distinct()
-                .collect(Collectors.toList());
+                .toList();
+
+        if (surahs.isEmpty()) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Surah Not Found");
+        }
+        return surahs;
     }
 
     // ✅ إضافة دالة لإرجاع سورة واحدة بـ id
     public SurahDto getSurahById(Long id) {
         return surahMapper.toDto(
                 surahrepo.findById(id)
-                        .orElseThrow(() -> new RuntimeException("Surah not found"))
+                        .orElseThrow(() -> new ResponseStatusException(  HttpStatus.NOT_FOUND,"Surah not found"))
         );
     }
 }
