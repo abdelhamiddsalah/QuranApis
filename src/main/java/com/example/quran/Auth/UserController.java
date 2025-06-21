@@ -31,4 +31,10 @@ public class UserController {
         );
         return ResponseEntity.ok(Collections.singletonMap("token", token));
     }
+
+    @GetMapping("/profile/{id}")
+    public AppUserEntity getUser(@PathVariable Long id) {
+        return authService.findByid(id);
+    }
+
 }

@@ -24,7 +24,7 @@ public class AyaEntity {
 
 
 
-    @Column(name = "aya_tafsir")
+    @Column(name = "aya_tafsir",columnDefinition = "TEXT")
     private String AyaTafsir;
 
     @Column(name = "audiourl")

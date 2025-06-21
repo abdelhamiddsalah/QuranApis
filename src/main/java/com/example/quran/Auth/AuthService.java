@@ -1,10 +1,12 @@
 package com.example.quran.Auth;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -34,7 +36,7 @@ public class AuthService {
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(passwordConfig.passwordEncoder().encode(password));
-        user.setConfirmPassword(null); // مش محتاجين نخزنها
+        user.setConfirmPassword(passwordConfig.passwordEncoder().encode(confirmPassword)); // مش محتاجين نخزنها
         user.setRole("ROLE_USER"); // لازم تضيف الحقل ده في الـ entity
 
         userrepo.save(user);
@@ -60,6 +62,10 @@ public class AuthService {
                 user.getPassword(),
                 List.of(new SimpleGrantedAuthority(user.getRole()))
         ));
+    }
+
+    AppUserEntity findByid(Long id) {
+        return userrepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User Not Found"));
     }
 
 }
