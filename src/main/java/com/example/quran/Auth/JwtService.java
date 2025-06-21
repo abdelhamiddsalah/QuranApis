@@ -19,10 +19,11 @@ public class JwtService {
                 .setSubject(userDetails.getUsername())
                 .claim("role", userDetails.getAuthorities().toString())
                 .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // يوم كامل
+                .setExpiration(new Date(System.currentTimeMillis() + 2592000000L)) // 30 يوم
                 .signWith(getSignInKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
+
 
     private Key getSignInKey() {
         byte[] keyBytes = SECRET_KEY.getBytes(StandardCharsets.UTF_8);

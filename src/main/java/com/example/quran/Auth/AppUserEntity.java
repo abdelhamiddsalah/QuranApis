@@ -1,30 +1,47 @@
 package com.example.quran.Auth;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.Collections;
 
 @Entity
 @Table(name = "app_user_entity")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class AppUserEntity {
+public class AppUserEntity implements UserDetails {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long userId;
-    @Column(name = "username")
+
     private String username;
-    @Column(name = "password")
     private String password;
-    @Column(name = "email")
     private String email;
-    @Column(name = "confirm_password")
     private String confirmPassword;
-    @Column(name = "theme")
     private String theme;
-    @Column(name = "role")
     private String role;
+
+    // ✅ Authorities
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return Collections.singleton(() -> role); // لازم تبدأ بـ ROLE_
+    }
+
+    // ✅ Username for Spring
+    @Override
+    public String getUsername() {
+        return email; // لو عاوز تخلي login بالإيميل
+    }
+
+    // ✅ Account checks
+    @Override public boolean isAccountNonExpired() { return true; }
+    @Override public boolean isAccountNonLocked() { return true; }
+    @Override public boolean isCredentialsNonExpired() { return true; }
+    @Override public boolean isEnabled() { return true; }
 }
