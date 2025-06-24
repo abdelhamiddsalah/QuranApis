@@ -24,6 +24,6 @@ public class AyaSearchEntity {
     @Column(columnDefinition = "TEXT")
     private String ayaTextStripped; // بدون تشكيل
 
-
+    private  String surahName;
 
 }

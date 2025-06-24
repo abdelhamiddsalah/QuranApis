@@ -50,12 +50,17 @@ public class AuthService {
 
     }
     public String login(String email, String password) {
-        authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(email, password)
-        );
+        try {
+            authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(email, password)
+            );
+        } catch (Exception e) {
+            // مصادقة فاشلة → رجع رسالة واضحة مع status 200
+            throw new ResponseStatusException(HttpStatus.OK, "Invalid email or password");
+        }
 
         AppUserEntity user = userrepo.findByEmail(email)
-                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.OK, "User not found"));
 
         return jwtService.generateToken(new org.springframework.security.core.userdetails.User(
                 user.getEmail(),
@@ -64,8 +69,9 @@ public class AuthService {
         ));
     }
 
+
     AppUserEntity findByid(Long id) {
-        return userrepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User Not Found"));
+        return userrepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.OK, "User Not Found"));
     }
 
 }

@@ -31,8 +31,7 @@ public class AyaJsonLoader {
                     aya.setAyaNumber(verse.getId());
                     aya.setAyaText(verse.getText()); // بالتشكيل
                     aya.setAyaTextStripped(ArabicNormalizer.removeTashkeel(verse.getText())); // بدون تشكيل
-
-
+                    aya.setSurahName(surah.getName());
                     ayaSearchRepository.save(aya);
                 }
                 System.out.println("تم استيراد الآيات من السورة: " + surah.getName());
