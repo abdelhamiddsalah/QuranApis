@@ -9,6 +9,4 @@ import java.util.List;
 public class AyaController {
     @Autowired
     AyaService ayaService;
-
-
 }
