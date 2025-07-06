@@ -41,8 +41,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, Object>> handleAllOtherExceptions(Exception ex) {
         Map<String, Object> error = new HashMap<>();
-        error.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
+        error.put("status", HttpStatus.NOT_FOUND.value());
         error.put("message", "Something went wrong: " + ex.getMessage());
-        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
 }

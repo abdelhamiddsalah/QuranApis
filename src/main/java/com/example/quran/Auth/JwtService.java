@@ -1,5 +1,6 @@
 package com.example.quran.Auth;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
@@ -13,22 +14,24 @@ import java.util.Date;
 @Component
 public class JwtService {
 
-    private final String SECRET_KEY = "f92jd83k29dksl30dkeowpqnvzmx1938"; // 32+ characters
-    public String generateToken(UserDetails userDetails) {
-        return Jwts.builder()
-                .setSubject(userDetails.getUsername())
-                .claim("role", userDetails.getAuthorities().toString())
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + 2592000000L)) // 30 يوم
-                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
-                .compact();
-    }
-
+    private final String SECRET_KEY = "f92jd83k29dksl30dkeowpqnvzmx1938"; // على الأقل 32 حرف
 
     private Key getSignInKey() {
         byte[] keyBytes = SECRET_KEY.getBytes(StandardCharsets.UTF_8);
         return Keys.hmacShaKeyFor(keyBytes);
     }
+
+    public String generateToken(UserDetails userDetails, Long userId) {
+        return Jwts.builder()
+                .setSubject(userDetails.getUsername())
+                .claim("role", userDetails.getAuthorities().toString())
+                .claim("id", userId) // ✅ إضافة الـ ID هنا
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + 2592000000L))
+                .signWith(getSignInKey(), SignatureAlgorithm.HS256)
+                .compact();
+    }
+
 
     public String extractUsername(String token) {
         return Jwts.parserBuilder()
@@ -37,6 +40,16 @@ public class JwtService {
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();
+    }
+
+    public Long extractUserId(String token) {
+        Claims claims = Jwts.parserBuilder()
+                .setSigningKey(getSignInKey())
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+        return Long.parseLong(claims.get("id").toString());
     }
 
     public boolean isTokenValid(String token, UserDetails userDetails) {

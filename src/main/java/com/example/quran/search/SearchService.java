@@ -23,7 +23,7 @@ public class SearchService {
         List<AyaSearchEntity> result = searchRepo.search(cleanedKeyword);
 
         if (result.isEmpty()) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "لا توجد آيات تحتوي على الكلمة المطلوبة");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No Words Found");
         }
 
         return result;

@@ -1,6 +1,7 @@
 package com.example.quran.Auth;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,6 +12,8 @@ import java.util.Collections;
 public class UserController {
 
     private final AuthService authService;
+    @Autowired
+    private JwtService jwtService;
 
     @PostMapping("/auth/signup")
     public ResponseEntity<?> signup(@RequestBody SignupRequest request) {
@@ -32,9 +35,14 @@ public class UserController {
         return ResponseEntity.ok(Collections.singletonMap("token", token));
     }
 
-    @GetMapping("/profile/{id}")
-    public AppUserEntity getUser(@PathVariable Long id) {
-        return authService.findByid(id);
+    @GetMapping("/profile")
+    public ResponseEntity<AppUserEntity> getUser(@RequestHeader("Authorization") String authHeader) {
+        String token = authHeader.replace("Bearer ", "");
+        Long userId = jwtService.extractUserId(token);
+        AppUserEntity user = authService.findByid(userId);
+        return ResponseEntity.ok(user);
     }
+
+
 
 }

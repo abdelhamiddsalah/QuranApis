@@ -21,57 +21,56 @@ public class AuthService {
 
     public String signup(String username, String password, String confirmPassword, String email) {
 
-        // تأكد من تطابق كلمة السر
         if (!password.equals(confirmPassword)) {
             throw new IllegalArgumentException("Passwords do not match");
         }
 
-        // تأكد من عدم تكرار المستخدم
         if (userrepo.findByEmail(email).isPresent()) {
             throw new IllegalArgumentException("Email already in use");
         }
 
-        // إنشاء كيان المستخدم
         AppUserEntity user = new AppUserEntity();
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(passwordConfig.passwordEncoder().encode(password));
-        user.setConfirmPassword(passwordConfig.passwordEncoder().encode(confirmPassword)); // مش محتاجين نخزنها
-        user.setRole("ROLE_USER"); // لازم تضيف الحقل ده في الـ entity
+        user.setRole("ROLE_USER");
 
         userrepo.save(user);
 
-        // توليد التوكن
-        return jwtService.generateToken(new org.springframework.security.core.userdetails.User(
-                user.getEmail(),
-                user.getPassword(),
-                List.of(new SimpleGrantedAuthority(user.getRole()))
-        ));
-
+        return jwtService.generateToken(
+                new org.springframework.security.core.userdetails.User(
+                        user.getEmail(),
+                        user.getPassword(),
+                        List.of(new SimpleGrantedAuthority(user.getRole()))
+                ),
+                user.getUserId() // ✅ أضف الـ id هنا
+        );
     }
+
     public String login(String email, String password) {
         try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(email, password)
             );
         } catch (Exception e) {
-            // مصادقة فاشلة → رجع رسالة واضحة مع status 200
             throw new ResponseStatusException(HttpStatus.OK, "Invalid email or password");
         }
 
         AppUserEntity user = userrepo.findByEmail(email)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.OK, "User not found"));
 
-        return jwtService.generateToken(new org.springframework.security.core.userdetails.User(
-                user.getEmail(),
-                user.getPassword(),
-                List.of(new SimpleGrantedAuthority(user.getRole()))
-        ));
+        return jwtService.generateToken(
+                new org.springframework.security.core.userdetails.User(
+                        user.getEmail(),
+                        user.getPassword(),
+                        List.of(new SimpleGrantedAuthority(user.getRole()))
+                ),
+                user.getUserId() // ✅ أضف الـ id هنا
+        );
     }
-
 
     AppUserEntity findByid(Long id) {
-        return userrepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.OK, "User Not Found"));
+        return userrepo.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.OK, "User Not Found"));
     }
-
 }
