@@ -1,5 +1,6 @@
 package com.example.quran.Favourites;
 
+import com.example.quran.Auth.AppUserEntity;
 import com.example.quran.Ayat.AyaEntity;
 import com.example.quran.Surahs.SurahEntity;
 import jakarta.persistence.*;
@@ -22,6 +23,9 @@ public class FavouriteEntity {
 
     @ManyToOne
     private AyaEntity aya;
+
+    @ManyToOne
+    private AppUserEntity user;
 
     // Getters and Setters
 }

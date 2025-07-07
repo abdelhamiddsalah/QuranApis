@@ -1,5 +1,6 @@
 package com.example.quran.Favourites;
 
+import com.example.quran.Auth.AppUserEntity;
 import com.example.quran.Ayat.AyaEntity;
 import com.example.quran.Ayat.AyaRepo;
 import com.example.quran.Surahs.SurahEntity;
@@ -23,28 +24,44 @@ public class FavouritesService {
     private AyaRepo ayaRepo;
 
 
-    public FavouriteEntity addFavourite(Long surahId, Long ayaId) {
-        SurahEntity surah = surahRepo.findById(surahId).orElseThrow(() -> new RuntimeException("Surah not found"));
-        AyaEntity aya = ayaRepo.findById(ayaId).orElseThrow(() -> new RuntimeException("Aya not found"));
+    public FavouriteEntity addFavourite(Long surahId, Long ayaId, AppUserEntity user) {
+        SurahEntity surah = surahRepo.findById(surahId)
+                .orElseThrow(() -> new RuntimeException("Surah not found"));
 
-        FavouriteEntity favouritesentity = new FavouriteEntity();
-        favouritesentity.setSurah(surah);
-        favouritesentity.setAya(aya);
+        AyaEntity aya = ayaRepo.findById(ayaId)
+                .orElseThrow(() -> new RuntimeException("Aya not found"));
 
-        if (favouriteRepo.existsBySurah_IdAndAya_AyaNumber(surah.getId(), aya.getAyaNumber())) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Already exists in favourites");
+        // ✅ استخدم الدالة الجديدة للتحقق من الوجود للمستخدم الحالي
+        if (favouriteRepo.existsByUserAndSurah_IdAndAya_AyaNumber(user, surah.getId(), aya.getAyaNumber())) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Already exists in favourites");
         }
 
+        FavouriteEntity favourite = new FavouriteEntity();
+        favourite.setSurah(surah);
+        favourite.setAya(aya);
+        favourite.setUser(user);
 
-        return favouriteRepo.save(favouritesentity);
+        return favouriteRepo.save(favourite);
     }
 
-    public List<FavouriteEntity> getFavourites() {
-        List<FavouriteEntity> result = favouriteRepo.findAll();
+
+
+    public List<FavouriteEntity> getFavourites(AppUserEntity user) {
+        List<FavouriteEntity> result = favouriteRepo.findByUser(user);
         if (result.isEmpty()) {
-            throw new RuntimeException("Favourites not found");
+            throw new RuntimeException("No favourites found for this user");
         }
         return result;
-
     }
+
+
+    public Boolean IsFavourite(Long surahId, Long ayaId, AppUserEntity user) {
+        SurahEntity surah = surahRepo.findById(surahId)
+                .orElseThrow(() -> new RuntimeException("Surah not found"));
+        AyaEntity aya = ayaRepo.findById(ayaId)
+                .orElseThrow(() -> new RuntimeException("Aya not found"));
+
+        return favouriteRepo.existsByUserAndSurah_IdAndAya_AyaNumber(user, surah.getId(), aya.getAyaNumber());
+    }
+
 }

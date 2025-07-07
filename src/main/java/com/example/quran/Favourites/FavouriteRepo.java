@@ -1,10 +1,15 @@
 package com.example.quran.Favourites;
 
+import com.example.quran.Auth.AppUserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
+import java.util.List;
+
 public interface FavouriteRepo extends JpaRepository<FavouriteEntity, Long> {
-    boolean existsBySurah_IdAndAya_AyaNumber(Long surahId, int ayaNumber);
-}
 
+    // ✅ لجلب المفضلات الخاصة بمستخدم محدد
+    List<FavouriteEntity> findByUser(AppUserEntity user);
+
+    // ✅ لفحص هل مفضلة موجودة لهذا المستخدم بالفعل
+    boolean existsByUserAndSurah_IdAndAya_AyaNumber(AppUserEntity user, Long surahId, int ayaNumber);
+}

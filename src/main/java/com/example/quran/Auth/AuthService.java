@@ -34,6 +34,7 @@ public class AuthService {
         user.setEmail(email);
         user.setPassword(passwordConfig.passwordEncoder().encode(password));
         user.setRole("ROLE_USER");
+        user.setTheme("Light");
 
         userrepo.save(user);
 
@@ -73,4 +74,6 @@ public class AuthService {
         return userrepo.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.OK, "User Not Found"));
     }
+
+
 }

@@ -24,7 +24,7 @@ public class AppUserEntity implements UserDetails {
     private String password;
     private String email;
     private String confirmPassword;
-    private String theme;
+    private String theme ;
     private String role;
 
     // ✅ Authorities
