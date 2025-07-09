@@ -33,6 +33,7 @@ public class AuthService {
         user.setUsername(username);
         user.setEmail(email);
         user.setPassword(passwordConfig.passwordEncoder().encode(password));
+        user.setConfirmPassword(passwordConfig.passwordEncoder().encode(confirmPassword));
         user.setRole("ROLE_USER");
         user.setTheme("Light");
 
