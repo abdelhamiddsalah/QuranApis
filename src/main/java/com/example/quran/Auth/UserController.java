@@ -36,11 +36,19 @@ public class UserController {
     }
 
     @GetMapping("/profile")
-    public ResponseEntity<AppUserEntity> getUser(@RequestHeader("Authorization") String authHeader) {
+    public ResponseEntity<ProfileResponse> getUser(@RequestHeader("Authorization") String authHeader) {
         String token = authHeader.replace("Bearer ", "");
         Long userId = jwtService.extractUserId(token);
         AppUserEntity user = authService.findByid(userId);
-        return ResponseEntity.ok(user);
+
+        ProfileResponse profile = new ProfileResponse(
+                user.getDisplayName(), // أو user.getDisplayName() لو سميته كده
+                user.getEmail(),
+                user.getRole(),
+                user.getTheme()
+        );
+
+        return ResponseEntity.ok(profile);
     }
 
 }

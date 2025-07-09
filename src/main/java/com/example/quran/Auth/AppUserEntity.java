@@ -36,8 +36,15 @@ public class AppUserEntity implements UserDetails {
     // ✅ Username for Spring
     @Override
     public String getUsername() {
-        return email; // لو عاوز تخلي login بالإيميل
+        return email; // علشان Spring Security
     }
+
+    // Getter عادي عشان أستخدم الـ username في أي مكان تاني
+    public String getDisplayName() {
+        return username;
+    }
+
+
 
     // ✅ Account checks
     @Override public boolean isAccountNonExpired() { return true; }
