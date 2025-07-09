@@ -44,8 +44,6 @@ public class AppUserEntity implements UserDetails {
         return username;
     }
 
-
-
     // ✅ Account checks
     @Override public boolean isAccountNonExpired() { return true; }
     @Override public boolean isAccountNonLocked() { return true; }
